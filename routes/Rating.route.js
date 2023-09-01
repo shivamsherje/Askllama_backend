@@ -5,6 +5,7 @@ const RatingRoute = express.Router();
 RatingRoute.get("/", async (req, res) => {
   const data = await RatingModel.find();
   res.send(data);
+
 });
 
 RatingRoute.post("/post", async (req, res) => {
