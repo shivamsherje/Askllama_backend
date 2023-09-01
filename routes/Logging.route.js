@@ -4,6 +4,7 @@ const { LoggingModel } = require('../model/Logging.model');
 
 const LoggingRoute = express.Router();
 
+
 LoggingRoute.post('/post', async (req, res) => {
 
     try {
@@ -36,10 +37,35 @@ LoggingRoute.post('/post', async (req, res) => {
 
 
 
-LoggingRoute.get('/', async (req, res) => {
-    const data = await LoggingModel.find()
-    res.send(data)
-})
+LoggingRoute.get('/read', (req, res) => {
+    try {
+        const filePath = 'data.txt';
+        const fileContent = fs.readFileSync(filePath, 'utf-8');
+        const lines = fileContent.trim().split('\n');
+
+        let jsonDataArray = [];
+        let currentObject = {};
+
+        for (const line of lines) {
+            const trimmedLine = line.trim();
+
+            if (trimmedLine === '{') {
+                currentObject = {};
+            } else if (trimmedLine === '}') {
+                jsonDataArray.push(currentObject);
+            } else {
+                const [key, value] = trimmedLine.split(':').map(part => part.replace(/"/g, '').trim());
+                currentObject[key] = value;
+            }
+        }
+
+        res.send({ "loggs": jsonDataArray, "success": true });
+    } catch (err) {
+        res.send({ "msg": "Error reading file", "success": false });
+        console.log(err);
+    }
+});
+
 
 
 
