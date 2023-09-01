@@ -8,11 +8,7 @@ const { FeedbackRoute } = require("./routes/Feedback.route");
 const { RatingRoute } = require("./routes/Rating.route");
 const { ThumbVotRoute } = require("./routes/ThumbVote.route")
 const { LoggingRoute } = require("./routes/Logging.route")
-app.use(
-  cors({
-    origin: "*",
-  })
-);
+app.use(cors());
 
 
 app.use("/feedbacks", FeedbackRoute);
