@@ -34,7 +34,10 @@ LoggingRoute.post('/post', async (req, res) => {
     }
 });
 
-
+LoggingRoute.get('/', async (req, res) => {
+    const data = await LoggingModel.find()
+    res.send(data)
+})
 
 
 LoggingRoute.get('/read', (req, res) => {
