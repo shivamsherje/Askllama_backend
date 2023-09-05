@@ -1,0 +1,34 @@
+{
+  "_id": "64f5ac233d78eb3d8d488434",
+  "loggs": []
+}
+{
+  "_id": "64f5ac393d78eb3d8d488437",
+  "loggs": []
+}
+{
+  "_id": "64f5ac733d78eb3d8d48843a",
+  "loggs": [
+    {
+      "Timestamp": 1693821926,
+      "Question": "hey",
+      "Master": "shivam",
+      "Answer": "My dear friend",
+      "Prompt": "You are shivam sherje",
+      "_id": "64f5ac733d78eb3d8d48843b"
+    }
+  ]
+}
+{
+  "loggs": [
+    {
+      "Timestamp": 1693888593,
+      "Question": "hey,",
+      "Master": "himanshu,",
+      "Answer": "My love",
+      "Prompt": "You are himanshu,",
+      "_id": "64f6b0cbc56f6eca73608474"
+    }
+  ],
+  "_id": "64f6b0cbc56f6eca73608473"
+}
